@@ -11,8 +11,8 @@ using static System.Console;
 Clear();
 
 Write("Введите число: ");
-bool num = int.TryParse(ReadLine(), out int Number);
-if (!num)
+bool isNum = int.TryParse(ReadLine(), out int Number);
+if (!isNum)
 {
     WriteLine("Ошибка! Вы ввели не число!");
     return;
@@ -22,13 +22,13 @@ int result = SumDigitInNumber(Number);
 
 WriteLine($"Сумма цифр числа {Number} равна {result}");
 
-int SumDigitInNumber(int Number)
+int SumDigitInNumber(int num)
 {
     int total = 0;
-    while (Number > 0)
+    while (num > 0)
     {
-        total += (Number % 10);
-        Number /= 10;
+        total += (num % 10);
+        num /= 10;
     }
     return total;
 }
