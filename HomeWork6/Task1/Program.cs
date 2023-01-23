@@ -18,12 +18,12 @@ int[] GetArray(int size, int minValue, int maxValue)    // метод форми
     int[] array = new int[size];
     for (int i = 0; i < size; i++)
     {
-        array[i] = new Random().Next(minValue, maxValue);
+        array[i] = new Random().Next(minValue, maxValue + 1);
     }
     return array;
 }
 
-void printArray(int[] array)    // метод заполнения массива
+void PrintArray(int[] array)    // метод заполнения массива
 {
     Write("[");
     for (int i = 0; i < array.Length - 1; i++)
@@ -34,7 +34,7 @@ void printArray(int[] array)    // метод заполнения массив�
 }
 
 Write("Полученный массив: ");
-printArray(array);
+PrintArray(array);
 
 // void AmountPositiveNum(int[] array)     // метод вычисления количества вводимых пользователем чисел, которые больше 0 (нуля)
 // {
@@ -48,9 +48,9 @@ printArray(array);
 
 // AmountPositiveNum(array);
 
-int amountPositiveNum = 0;
-foreach (int i in array)
+int AmountPositiveNum = 0;
+foreach (int i in array)        // цикл вычисления количества вводимых пользователем чисел, которые больше 0 (нуля)
 {
-    amountPositiveNum += (i > 0) ? 1 : 0;
+    AmountPositiveNum += (i > 0) ? 1 : 0;
 }
-WriteLine($"Количество введенных чисел больше 0 (нуля) равно: {amountPositiveNum}");
+WriteLine($"Количество введенных чисел больше 0 (нуля) равно: {AmountPositiveNum}");
