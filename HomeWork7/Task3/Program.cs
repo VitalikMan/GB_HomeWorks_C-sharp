@@ -47,7 +47,7 @@ void PrintMatrixArray(int[,] matrixArray)       // метод вывода за�
     {
         for (int j = 0; j < matrixArray.GetLength(1); j++)
         {
-            Write($"{matrixArray[i, j],5} ");
+            Write($"{matrixArray[i, j],6}");
         }
         WriteLine();
     }
@@ -60,8 +60,7 @@ void ArithmeticMeanOfEachTableColumn(int[,] matrixArray)        // метод в
     {
         for (int i = 0; i < matrixArray.GetLength(0); i++)
         {
-            int x = j;
-            result[j] += matrixArray[i, x];
+            result[j] += matrixArray[i, j];
         }
         Write($"{result[j] /= matrixArray.GetLength(0),6:f2}");
     }
