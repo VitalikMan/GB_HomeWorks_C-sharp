@@ -33,10 +33,10 @@ WriteLine();
 
 int[,,] GetMatrixArray(int heightFigure, int lengthFigure, int widthFigure, int minValue, int maxValue)    // метод формирования фигуры
 {
-    int size = minValue * maxValue;
+    int size = maxValue;
     int[] arrayValue = new int[size];
     int[,,] resultArray = new int[heightFigure, lengthFigure, widthFigure];
-    for (int a = 0, w = 10; w < 100; a++, w++)      // создание одномерного массива с неповторяющимися значениями
+    for (int a = 0, w = minValue; w < maxValue; a++, w++)      // создание одномерного массива с неповторяющимися значениями
     {
         arrayValue[a] = w;
     }
