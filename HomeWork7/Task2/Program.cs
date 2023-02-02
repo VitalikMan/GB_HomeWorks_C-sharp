@@ -65,20 +65,14 @@ void PrintMatrixArray(int[,] matrixArray)       // метод вывода за�
 string ElementPositionCalculation(int rowsPosition, int columnsPosition, int[,] matrixArray)    // метод поиска искомого элемента по позиции в таблице
 {
     string resultPosition = string.Empty;
-    for (int i = 0; i < matrixArray.GetLength(0); i++)
+    if (rowsPosition <= matrixArray.GetLength(0) && columnsPosition <= matrixArray.GetLength(1))
     {
-        for (int j = 0; j < matrixArray.GetLength(1); j++)
+        if (rowsPosition > 0 && columnsPosition > 0)
         {
-            if (rowsPosition <= matrixArray.GetLength(0) && columnsPosition <= matrixArray.GetLength(1))
-            {
-                if (rowsPosition > 0 && columnsPosition > 0)
-                {
-                    resultPosition = $"Искомый элемент в таблице равен -> " + matrixArray[rowsPosition - 1, columnsPosition - 1];
-                }
-                else { resultPosition = "Такого элемента в таблице нет!"; }
-            }
-            else { resultPosition = "Такого элемента в таблице нет!"; }
+            resultPosition = $"Искомый элемент в таблице равен -> " + matrixArray[rowsPosition - 1, columnsPosition - 1];
         }
+        else { resultPosition = "Такого элемента в таблице нет!"; }
     }
+    else { resultPosition = "Такого элемента в таблице нет!"; }
     return resultPosition;
 }
