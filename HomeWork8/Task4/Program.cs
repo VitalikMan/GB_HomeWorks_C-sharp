@@ -36,13 +36,13 @@ int[,,] GetMatrixArray(int heightFigure, int lengthFigure, int widthFigure, int 
     int size = minValue * maxValue;
     int[] arrayValue = new int[size];
     int[,,] resultArray = new int[heightFigure, lengthFigure, widthFigure];
-    for (int a = 0, w = 10; w < 100; a++, w++)
+    for (int a = 0, w = 10; w < 100; a++, w++)      // создание одномерного массива с неповторяющимися значениями
     {
         arrayValue[a] = w;
     }
 
     int b = 0;
-    for (int k = 0; k < heightFigure; k++)
+    for (int k = 0; k < heightFigure; k++)      // присвоение значений с одномерного массива в трехмерный массив
     {
         for (int i = 0; i < lengthFigure; i++)
         {
@@ -55,7 +55,7 @@ int[,,] GetMatrixArray(int heightFigure, int lengthFigure, int widthFigure, int 
     }
 
     Random rnd = new Random();
-    for (int k = 0; k < heightFigure; k++)
+    for (int k = 0; k < heightFigure; k++)      // разброс значений в случайном порядке в массиве
     {
         for (int i = 0; i < lengthFigure; i++)
         {
@@ -93,7 +93,7 @@ void PrintMatrixArray(int[,,] matrixArray)       // метод вывода фи
     }
 }
 
-void PrintValueAndIndexArray(int[,,] matrixArray)       // метод вывода фигуры заполненной значениями
+void PrintValueAndIndexArray(int[,,] matrixArray)       // метод вывода значения и его индекса в массиве
 {
     for (int k = 0; k < matrixArray.GetLength(0); k++)
     {
